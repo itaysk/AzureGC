@@ -22,7 +22,7 @@ You could also [enforce tagging of resources](https://docs.microsoft.com/en-us/a
 ## Installing
 
 - Create a function app, copy the functions to it
-  - Set the App Service application settings accorting to [required environment variables](Docs/environmentVariables.md)
+  - Set the App Service application settings accorting to [required environment variables](docs/environmentVariables.md)
 - Create a logic app, copy the WF definition to it
   - Change the extendUrl parameter to the url of the 'extend-ownership' function
   - Setup the resuired Storage Queue and Office 365 connections.
@@ -47,7 +47,7 @@ Final piece is an automated email reminder that is sent to owners. This is imple
 
 The following diagram depicts the components in the system, and the relationship between them:
 
-![](Docs/architecture.png)
+![](docs/architecture.png)
 
 ## FAQ
 
