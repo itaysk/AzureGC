@@ -21,13 +21,7 @@ You could also [enforce tagging of resources](https://docs.microsoft.com/en-us/a
 
 ## Deploying
 
-1. Create a function app, copy the functions to it
-  - Set the App Service application settings accorting to [required environment variables](docs/environmentVariables.md)
-2. To create the logic app, deploy the template (ARM template)
-  - Set the 'extendUrl' parameter to the url of the 'extend-ownership' with a query string variable 'ResourceId=&lt;resourceid&gt;'
-  - Set the Storage Account name and key for the queues.
-  - After deployment, go to the connection via portal and Autorize the connection to O365 (you have to manually sign in to O365)
-
+See [Deploying](docs/deploying.md)
 
 ## Architecture
 
