@@ -19,13 +19,14 @@ You should [lock important resource group](https://docs.microsoft.com/en-us/azur
 
 You could also [enforce tagging of resources](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-policy#policy-definition-examples), I personally prefer not to.
 
-## Installing
+## Deploying
 
-- Create a function app, copy the functions to it
+1. Create a function app, copy the functions to it
   - Set the App Service application settings accorting to [required environment variables](docs/environmentVariables.md)
-- Create a logic app, copy the WF definition to it
-  - Change the extendUrl parameter to the url of the 'extend-ownership' function
-  - Setup the resuired Storage Queue and Office 365 connections.
+2. To create the logic app, deploy the template (ARM template)
+  - Set the 'extendUrl' parameter to the url of the 'extend-ownership' with a query string variable 'ResourceId=&lt;resourceid&gt;'
+  - Set the Storage Account name and key for the queues.
+  - After deployment, go to the connection via portal and Autorize the connection to O365 (you have to manually sign in to O365)
 
 
 ## Architecture
