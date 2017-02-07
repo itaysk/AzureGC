@@ -10,9 +10,6 @@ Import-Module "D:\home\site\wwwroot\azuremodules\AzureRM.Profile.psd1" -Global;
 Import-Module "D:\home\site\wwwroot\azuremodules\AzureRM.Resources.psd1" -Global;
 Import-Module "D:\home\site\wwwroot\azuremodules\AzureRM.Tags.psd1" -Global;
 
-#setup
-$in = Get-Content $req -Raw | ConvertFrom-Json
-
 #login
 $user = $env:azureGcUser
 $password = $env:azureGcPass
@@ -23,7 +20,7 @@ Login-AzureRmAccount -ServicePrincipal -TenantId $tenant -Credential $creds
 Set-AzureRmContext -SubscriptionId $env:azureGcSubscription
 
 #Look up the resource group, and update its 'Expire' tag
-$rg = Get-AzureRmResourceGroup -Id [System.Web.HttpUtility]::UrlDecode($req_query_ResourceId)
+$rg = Get-AzureRmResourceGroup -Id $req_query_ResourceId
 $originalExpirationDate = [DateTime]$rg.Tags.$ExpireTagName
 $newExpiration = $originalExpirationDate.AddDays($ExtensionDays).ToString("yyy-MM-dd")
 $tags = $rg.tags
