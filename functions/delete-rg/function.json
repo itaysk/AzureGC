@@ -1,0 +1,12 @@
+{
+  "bindings": [
+    {
+      "name": "triggerInput",
+      "type": "queueTrigger",
+      "direction": "in",
+      "queueName": "delete",
+      "connection": "stumgmtstorage_STORAGE"
+    }
+  ],
+  "disabled": false
+}
