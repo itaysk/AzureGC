@@ -55,9 +55,6 @@ A: Since PowerShell is awesome. Since the audience for this tool is mostly sys-a
 Q: Why Storage Queues and not Service Bus?  
 A: Because Functions already relies on Azure Storage Queues and I didn't want to create an additional dependency.
 
-Q: Why 3 different functions?  
-A: I though about this a a lot and concluded that it's best to separate dependencies between functions, and also not hitting Function run time limits with large subscriptions. You can easily merge into one function if you want.
-
 Q: Tag values are not validated. What keeps people from setting very long expiry, or setting someone elase as owner?  
 A: Nothing. This is not a strict enforcing system. This is a tool to help you and your team manage your stuff. If someone needs more than a week, they are welcome to set the expiry to as long as they need; If someone wants to transfer ownership to a colleague, they can easily do so. This tool is meant to be used in a friendly environment.
 
