@@ -46,17 +46,20 @@ The following diagram depicts the components in the system, and the relationship
 
 ## FAQ
 
-Q: Why Functions, isn't this what Azure Automation supposed to do?
+Q: Why Functions, isn't this what Azure Automation supposed to do?  
 A: I have initially started this project on Automation, but when things evolved in terms of complexity, and also Functions because more mature I decided to try it out. I find Functions to be much more elegant solition for this kind of tasks.
 
-Q: Why PowerShell?
+Q: Why PowerShell?  
 A: Since PowerShell is awesome. Since the audience for this tool is mostly sys-admins. Since Azure management is most mature with PS.
 
-Q: Why 3 different functions?
+Q: Why Storage Queues and not Service Bus?  
+A: Because Functions already relies on Azure Storage Queues and I didn't want to create an additional dependency.
+
+Q: Why 3 different functions?  
 A: I though about this a a lot and concluded that it's best to separate dependencies between functions, and also not hitting Function run time limits with large subscriptions. You can easily merge into one function if you want.
 
-Q: Tag values are not validated. What keeps people from setting very long expiry, or setting someone elase as owner?
+Q: Tag values are not validated. What keeps people from setting very long expiry, or setting someone elase as owner?  
 A: Nothing. This is not a strict enforcing system. This is a tool to help you and your team manage your stuff. If someone needs more than a week, they are welcome to set the expiry to as long as they need; If someone wants to transfer ownership to a colleague, they can easily do so. This tool is meant to be used in a friendly environment.
 
-A: The 'extend-ownership' HTTP function is insecure, anyone can extend any resourc!
+A: The 'extend-ownership' HTTP function is insecure, anyone can extend any resourc!  
 Q: Yes, as long as they have RBAC permission. Again, this is not a strict enforcing system. This is a tool to help you and it's meant to be used in a friendly environment.
