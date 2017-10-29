@@ -14,7 +14,7 @@ $password = $env:azureGcPass
 $tenant = $env:azureGcTenant
 $securedPass = ConvertTo-SecureString -AsPlainText -String $password -Force
 $creds = New-Object System.Management.Automation.PSCredential($user,$securedPass)
-Login-AzureRmAccount -ServicePrincipal -TenantId $tenant -Credential $creds
+Add-AzureRmAccount -ServicePrincipal -TenantId $tenant -Credential $creds
 Set-AzureRmContext -SubscriptionId $env:azureGcSubscription
 
 #get all resource groups in the subscription (including tags information)

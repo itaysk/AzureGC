@@ -2,8 +2,9 @@
 
 ## Functions
 
-Create a function app, copy the functions to it.
-You can also setup continous integration, make sure to set the project folder correctly (since functions are not at the root of this repo)
+Create a function app, copy the functions to it. 
+You can use Kudo to drag & drop the files: https://<FunctionAppName>.scm.azurewebsites.net/ 
+You can also setup continuous integration, make sure to set the project folder correctly (since functions are not at the root of this repo)
 
 Then set the following App Service application settings:
 
@@ -15,7 +16,7 @@ Then set the following App Service application settings:
 
 ## Logic Apps
 
-Since the logic app is dependent on the queue and O365 connections, which I doen't want to share, I have wrapped the entire set of resource in an ARM template.
+Since the logic app is dependent on the queue and O365 connections, which I doesn't want to share, I have wrapped the entire set of resource in an ARM template.
 You can just deploy the template using a regular template deployment, just be aware of the template parameters, especially:
   
   - Set the 'extendUrl' parameter to the url of the 'extend-ownership' with a query string variable 'ResourceId=&lt;resourceid&gt;'. for example: 'http://you.function.com?code=xyz&ResourceId=&lt;resourceid&gt;'
