@@ -1,3 +1,5 @@
+> Note: This project is unmaintained, and it's design should be refreshed according to development in Azure since. Most notably: The usage of PowerShell in Azure Functions, and the introduction of EventGrid for triggering functions.
+
 Azure GC (Garbage Collector) - a governance tool to keep shared Azure subscriptions tidy. 
 
 This tool can help you govern shared Azure subscriptions, keeping track of who owns what, and automatically cleanup of expired resources.
